@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Leon - Checkpointfragen</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a2136b95-478d-4324-b65b-e4c47e6dff49" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🦆</span></div><h1 class="page-title">Leon - Checkpointfragen</h1><p class="page-description"></p></header><div class="page-body"><nav id="69142317-48c6-492b-9892-0047361421e4" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d5b94ae4-7059-46ac-b788-af7fba794af2">Kapitel 1 - Linux-Überblick</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6f4d01b3-4faf-44ff-b98d-b723e164bfb4">Lösungen</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#32cbd2b4-d1db-4f7a-9f36-89eb77c8f03e">Kapitel 2 - Dateisysteme</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2734de14-a92f-4cf0-9623-33f76e75ee3b">Lösungen</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#faf77fda-f5ca-4879-b01d-692bd4b0435f">Kapitel 3 - Entwicklungsumgebung</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#fa4ccc29-af91-4775-bdc6-ae265a40498f">Lösungen</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#85ab30cf-64f3-48d9-b3a1-e0b1a51cc624">Kapitel 4 - Das eigene Linux-System</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f503d64b-dc09-4bc4-8990-5fecd384fe7f">Lösungen</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ba24b824-e72e-4e68-be6b-b0f1981d032d">Kapitel 5 - BusyBox</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#cf3ed0db-9fe0-48b2-bc43-5b21d73ea327">Lösungen</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3f29737b-16f7-47fb-9ece-8a37f68decb9">Kapitel 6 - Integrierte Entwicklungsumgebung<br/>Kapitel 7 - Plattformunabhängige SW-Entwicklung<br/>Kapitel 8 - Prozesse und Signale<br/>Kapitel 9 - Multithreading<br/></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#057e548d-092b-4802-8b25-b1909a4f67bd">Lösungen</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c926148c-2eb0-4293-8388-2a3799d8a03c">Kapitel 10 - Audio</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#49c890a9-4083-4a3a-89f2-8ef4087f7d44">Lösungen</a></div></nav><h1 id="d5b94ae4-7059-46ac-b788-af7fba794af2" class="">Kapitel 1 - Linux-Überblick</h1><figure id="b57df25a-9039-4303-b184-237b243e9239"><div class="source"><a href="Leon%20-%20Checkpointfragen%20a2136b95478d4324b65be4c47e6dff49/PAS_Checkpoint_Fragen_01.pdf">https://prod-files-secure.s3.us-west-2.amazonaws.com/cbded2ee-5b2a-4b10-a3ae-4e26a40eed77/3bdf569e-c6e4-4fee-a4ca-f1d19d7bfb88/PAS_Checkpoint_Fragen_01.pdf</a></div></figure><ol type="1" id="7821b5d8-e7d2-4c11-a659-f7bfcdf9c4e9" class="numbered-list" start="1"><li>Was ist die Aufgabe des Kernels eines Betriebssystems?<ol type="a" id="53ae10d5-fc50-4ce1-99e8-a784da074fc2" class="numbered-list" start="1"><li>Der Kernel ist die Schnittstelle zwischen Software und Hardware. Er sorgt dafür, dass die benötigten Hardwarekomponenten angesteuert werden.</li></ol></li></ol><ol type="1" id="6a0f396b-0743-4f37-8454-a9fa5756c100" class="numbered-list" start="2"><li>Wie sähe Programmcode aus, wenn es keinen Kernel gäbe?<ol type="a" id="cd057b1e-0311-4de0-a691-f19a4c98175b" class="numbered-list" start="1"><li>Es gäbe ohne einen Kernel keinen Programmcode</li></ol></li></ol><ol type="1" id="297367ad-cbbc-49b2-bd13-b97e9a4955e5" class="numbered-list" start="3"><li>Was ist der Inhalt des Verzeichnisses /dev<ol type="a" id="4f78c7bf-b077-41ba-ac65-4e17d61ea75a" class="numbered-list" start="1"><li>In diesem Verzeichnis sind alle Dateisysteme aufgelistet</li></ol></li></ol><ol type="1" id="3634eab1-2a5d-4bdb-ac6d-fc57f265afd6" class="numbered-list" start="4"><li>Was ist der Unterschied zwischen /dev/sda und /dev/sda1<ol type="a" id="26eac520-c6f4-4221-90b2-19fb0a427993" class="numbered-list" start="1"><li>/dev/sda ist ein Komplettes Dateisystem und /dev/sda1 ist eine Partition dieses Dateisystems</li></ol></li></ol><ol type="1" id="14864b56-6eb5-40d9-a5bb-5d98166f2b54" class="numbered-list" start="5"><li>Sie haben Ihren Computer mit einer neuen Hardware verbunden. Wie stellen Sie fest, ob die Hardware erkannt wurde?<ol type="a" id="f19b27eb-7369-451c-9b62-6a92a09cb181" class="numbered-list" start="1"><li>Man schaut, ob die jeweilige Hardware im /dev - Verzeichnis aufgelistet ist.</li></ol></li></ol><ol type="1" id="cfdcecd6-6747-4782-909f-2089e3657434" class="numbered-list" start="6"><li>Warum exportiert man Umgebungsvariable?<ol type="a" id="6c9ed4b4-b2e9-4514-ad08-089e82b7e328" class="numbered-list" start="1"><li>Hat man z.B. in der Graphischen Umgebung /dev/pts eine Umgebungsvariable ohne export definiert, kann man diese in den tty - Terminals nicht abrufen.</li></ol></li></ol><ol type="1" id="37c8c326-76c1-45a6-bd9a-8c0a97d13bff" class="numbered-list" start="7"><li>Von welchem Prozess stammen alle anderen Prozesse in einem Linux-System ab?<ol type="a" id="5b795cd3-8fba-4eeb-b693-a9debd558d9c" class="numbered-list" start="1"><li>Vom Vater-Prozess</li></ol></li></ol><ol type="1" id="679bb296-de5b-46a3-a02d-efc69a5c9220" class="numbered-list" start="8"><li>Woran erkennt man Kernel-Prozesse?<ol type="a" id="86db9a86-5443-4d3e-9a0d-2e48c2a20b55" class="numbered-list" start="1"><li>Kernel-Prozesse haben den init-Prozess, als Eltern-Prozess. Andere Prozesse haben einen Kernel-Prozess als Parent-Prozess</li></ol></li></ol><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Lösungen</summary><div class="indented"><ol type="1" id="7ecb970b-d7a6-46db-994f-7104236cd7dd" class="numbered-list" start="1"><li>Der Kernel ist die Schnittstelle von der Software zur Hardware. Er stellt die “Basis” eines BS dar.</li></ol><ol type="1" id="5725e3dc-3bfe-4e7f-9169-675a59f6994e" class="numbered-list" start="2"><li>Die Software müsste direkt mit der Hardware kommunizieren. Wodurch es deutlich schwieriger, komplexer und fehleranfälliger wird, da man deutlich mehr auf die unterschiedliche Hardware eingehen muss</li></ol><ol type="1" id="099f3530-0650-4c45-a438-1ae497759edd" class="numbered-list" start="3"><li>Hier sind alle Geräteknoten aufgelistet</li></ol><ol type="1" id="7facfef4-882b-4343-a73b-8c1ea3c1d560" class="numbered-list" start="4"><li>Bei sda handelt es sich um die Festplatte eines Systems. sda1 ist eine Partition dieser Festplatte.</li></ol><ol type="1" id="be26f08e-0c0f-4841-a9cc-375fd493d699" class="numbered-list" start="5"><li><code>/~dmsg</code> (<span style="border-bottom:0.05em solid"><strong>d</strong></span>evice <span style="border-bottom:0.05em solid"><strong>m</strong></span>e<span style="border-bottom:0.05em solid"><strong>s</strong></span>sa<span style="border-bottom:0.05em solid"><strong>g</strong></span>e) zeigt dir im laufenden Betrieb an, wenn Geräte hinzugefügt werden</li></ol><ol type="1" id="8d6e27d0-a432-4bf6-aafc-0f5365fce78b" class="numbered-list" start="6"><li>Man exportiert Umgebungsvariablen, damit sie vererbt werden. Wenn in einer Bash eine Bash gestartet wird, werden die Umgebungsvariablen nur vererbt, wenn diese exportiert wurden.</li></ol><ol type="1" id="70f46295-9241-4488-b6b4-162785dd6722" class="numbered-list" start="7"><li>Es stammen alle Prozesse vom Eltern-Prozess ab. Dieser ist meistens der init-Prozess. Hierbei gibt es aber auch oft einen init-Ersatz</li></ol><ol type="1" id="2c814bf0-ec4b-4704-a8e2-60118b646ea0" class="numbered-list" start="8"><li>Kernel-Prozesse, haben oft eine sehr kleine PID oder die des init-Prozesses, da sie meist direkt nach Start des Systems gestartet werden</li></ol><p id="5f48a0ef-a05f-4b73-9f17-a6cfb2f517a6" class="">
+</p></div></details><h1 id="32cbd2b4-d1db-4f7a-9f36-89eb77c8f03e" class="">Kapitel 2 - Dateisysteme</h1><figure id="f559c860-a9ce-4aff-abbc-73ca40afd32b"><div class="source"><a href="Leon%20-%20Checkpointfragen%20a2136b95478d4324b65be4c47e6dff49/PAS_Checkpoint_Fragen_02.pdf">https://prod-files-secure.s3.us-west-2.amazonaws.com/cbded2ee-5b2a-4b10-a3ae-4e26a40eed77/e6e57f01-acd8-4568-bf3c-f2a8cc47ad81/PAS_Checkpoint_Fragen_02.pdf</a></div></figure><ol type="1" id="492198be-cecc-4c26-ad84-d6235f15ad14" class="numbered-list" start="1"><li>Was ist der Unterschied zwischen einem Block- und einem Character-Device?<ol type="a" id="f593dc66-9ecb-4dae-a060-9a19bee7abd7" class="numbered-list" start="1"><li>Bei einem Char-Device gibt es eine Zeichenweise Datenübertragung. Dies wird meist von Ein- und Ausgabegeräten wie Maus und Tastatur genutzt.</li></ol><ol type="a" id="f15be93e-939a-4162-bc9e-6f40d8c810f1" class="numbered-list" start="2"><li>Bei einem Block-Device gibt es eine Blockweise Datenübertragung. Dies wird meist von Speichermedien genutzt, wie Festplatten. Dies sorgt für eine effizientere Datenübertragung</li></ol></li></ol><ol type="1" id="1609ce9a-d0a3-47eb-91c4-ab3c2acdd57e" class="numbered-list" start="2"><li>Woran erkennt man, ob ein Gerät ein Block- oder ein Character-Device ist?<ol type="a" id="b4f61241-c56c-4e9d-8b68-856bc6fa5c0d" class="numbered-list" start="1"><li>In dem /dev Verzeichnis sind alle Geräteknoten aufgelistet. Führt man nun in diesem Verzeichnis den Befehl <code>ls -l</code> aus bekommt man mehrere Informationen zu den Geräteknoten. Zu Beginn der jeweiligen Knoten kann man durch ein “c” oder ein “b” unterscheiden, ob es sich um ein Char oder ein Block-Device handelt.</li></ol></li></ol><ol type="1" id="b8f94bc9-2ba1-4416-820b-9276d205887a" class="numbered-list" start="3"><li>Was ist das Ergebnis von mkdir /dev/sda1/ccode wenn /dev/sda1 eine Partition einer Festplatte repräsentiert?<ol type="a" id="b9f3535e-913f-450b-81dd-de81bab4968d" class="numbered-list" start="1"><li>Da hier versucht wird in /dev ein Ordner anzulegen, wird eine Fehlermeldung ausgegeben, da hier lediglich die ganzen Geräteknoten aufgelistet sind und man keine neuen Verzeichnisse oder Dateien anlegen darf.</li></ol></li></ol><ol type="1" id="cf21cd09-bdd9-409a-926e-af37d1c643dc" class="numbered-list" start="4"><li>Was wird benötigt, um eine Datei auf der Partition eines Speichermediums anzulegen?<ol type="a" id="4f245e6a-9bef-4a4d-8f70-e0405511626f" class="numbered-list" start="1"><li>Man benötigt einen mount-point. Erst wenn die Partition eingehängt ist, kann man Dateien anlegen</li></ol></li></ol><ol type="1" id="f7fb9584-0429-466e-925c-d5a2d62bd9ca" class="numbered-list" start="5"><li>Wie bekommt man eine Übersicht über alle Block-Devices?<ol type="a" id="21c52e09-ae42-4807-b477-238f97aeed2b" class="numbered-list" start="1"><li><code>lsblk</code></li></ol></li></ol><ol type="1" id="5a30d9f8-96ae-4f28-a25c-d17219a980b2" class="numbered-list" start="6"><li>Wie kopiert man den Inhalt des Speichermediums /dev/sdc in die Datei /tmp/device.img?<ol type="a" id="e1f3afc6-2205-44a8-a3e3-af116aa9532f" class="numbered-list" start="1"><li><code>dd if=/dev/sdc of=/tmp/device.img</code></li></ol></li></ol><ol type="1" id="22df85ce-5ea9-4c07-96dd-e823bce8c11f" class="numbered-list" start="7"><li>Für welche zwei verschiedenen Zwecke haben wir den Befehl mount genutzt?<ol type="a" id="64ee1902-06ef-4b83-a260-98c838e530fc" class="numbered-list" start="1"><li>Wir haben die Partitionen unserer SD-Karte in das /mnt - Verzeichnis eingehängt um somit darauf zuzugreifen und Änderungen vornehmen zu können. </li></ol><ol type="a" id="d0e19ab2-f951-40be-9ba4-a5d44ee924bf" class="numbered-list" start="2"><li>Der zweite Fall war das Einhängen des Dateisystems unseres Targets über NFS</li></ol></li></ol><ol type="1" id="ab961aef-f44d-4d28-b5a2-e46edd00a008" class="numbered-list" start="8"><li>Was ist der Inhalt der Datei /etc/exports?<ol type="a" id="29afd659-bb80-45c7-9108-525e38595b07" class="numbered-list" start="1"><li>Hier sind alle Umgebungsvariablen aufgelistet.</li></ol></li></ol><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Lösungen</summary><div class="indented"><ol type="1" id="41db59bb-faa0-4328-9c68-1750d958387e" class="numbered-list" start="1"><li><strong>Char</strong>-Devices sind meist <strong>Geräte</strong> und diese haben eine <strong>Zeichenweise Kommunikation<br/>Block<br/></strong>-Devices sind meist <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Speichergeräte</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> und diese haben eine <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Blockweiser Datentransport</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ol><ol type="1" id="04f9d565-905d-473f-88aa-05515a8f7a23" class="numbered-list" start="2"><li><code>ls -l /dev</code> erster Buchstabe</li></ol><ol type="1" id="ef9af664-994e-44f1-8c44-a2bd066b06bb" class="numbered-list" start="3"><li>Es erscheint eine <strong>Fehlermeldung</strong>, da es sich hierbei nur um einen <strong>Geräteknoten </strong>handelt. Im /dev Verzeichnis kann man weder Verzeichnisse noch Dateien anlegen.</li></ol><ol type="1" id="1e144842-a59a-48cf-b937-d2c5a5d25570" class="numbered-list" start="4"><li>Man muss diese <strong>Partition </strong>in einen <strong>Mount-Punkt einhängen</strong>, damit man hier etwas anlegen kann</li></ol><ol type="1" id="44d21169-b419-493e-812b-8317bbe4fb0a" class="numbered-list" start="5"><li><code>lsblk</code></li></ol><ol type="1" id="bd66397f-3574-41db-b7d9-bf8d0ef87fc6" class="numbered-list" start="6"><li><strong><code><strong><strong><strong>sudo</strong></strong></strong></code></strong><code> dd if=/dev/sdc of=/tmp/device.img</code></li></ol><ol type="1" id="19b1510b-4da3-4691-9d00-07ca0a90c747" class="numbered-list" start="7"><li>1. Partition der SD-Karte auf Host <br/>2. Dateisystem des Targets über NFS (Network File System) auf Host einhängen <br/></li></ol><ol type="1" id="be476a0a-c60c-4f44-a6c0-2bd85fb82764" class="numbered-list" start="8"><li>Hier sind die für NFS freigegebenen Verzeichnisse aufgelistet</li></ol></div></details><h1 id="faf77fda-f5ca-4879-b01d-692bd4b0435f" class="">Kapitel 3 - Entwicklungsumgebung</h1><figure id="6627aa89-301e-4cf5-8ed2-9bdc9203c63e"><div class="source"><a href="Leon%20-%20Checkpointfragen%20a2136b95478d4324b65be4c47e6dff49/PAS_Checkpoint_Fragen_03.pdf">https://prod-files-secure.s3.us-west-2.amazonaws.com/cbded2ee-5b2a-4b10-a3ae-4e26a40eed77/d2f57719-569e-4a2b-8c35-c3ead2e3fa65/PAS_Checkpoint_Fragen_03.pdf</a></div></figure><ol type="1" id="bffa23c7-2040-48ff-9514-7bbb5e93a7dc" class="numbered-list" start="1"><li>Mit welchem Befehl erfahren Sie, für welche CPU-Architektur eine ausführbare Datei übersetzt wurde?<ol type="a" id="1889e8a4-b72f-4d02-ab33-1547b151b4b7" class="numbered-list" start="1"><li><code>file &lt;Datei&gt;</code></li></ol></li></ol><ol type="1" id="3aad3ee1-3d3c-446c-9110-f67a4e663cb3" class="numbered-list" start="2"><li>Wofür steht die Abkürzung SoC?<ol type="a" id="29949607-7335-4508-a223-eee0c4b645c6" class="numbered-list" start="1"><li>System on Chip</li></ol></li></ol><ol type="1" id="9bd26cee-6c86-42e4-911d-12f7e0bc44ff" class="numbered-list" start="3"><li>Was ist eine Cross-Toolchain?<ol type="a" id="3596bc60-f299-4e81-ad4e-55650c8c0b2e" class="numbered-list" start="1"><li>Eine Cross-Toolchain ist eine Sammlung von Werkzeuge, mit denen man eine ausführbare Datei erstellen kann, für eine Plattform mit einer anderen CPU-Architektur </li></ol></li></ol><ol type="1" id="ba9cd812-d80d-4538-b1cf-9eabf989c825" class="numbered-list" start="4"><li>Welche Bedeutung hat die Umgebungsvariable CC?<ol type="a" id="dba35fb4-76da-4167-97b8-6bc4151c86e4" class="numbered-list" start="1"><li>CROSS_COMPILE : erzeugt Code für ARM-Prozessoren</li></ol></li></ol><ol type="1" id="85824ea3-0834-4a6e-b3b1-cb9c3b82c0b1" class="numbered-list" start="5"><li>Sie finden eine Datei mit der Endung .so. Was befindet sich in dieser Datei?<ol type="a" id="e2d51e61-97e7-485b-9b84-6bc7317f9744" class="numbered-list" start="1"><li>In dieser shared object-Datei findet man Referenzen zu einer Bibliothek</li></ol></li></ol><ol type="1" id="0182240c-6d87-4687-8291-1f1a2af38927" class="numbered-list" start="6"><li>In einer Datei namens Makefile finden Sie die folgenden Zeilen. Was bedeuten Sie?<br/><br/><code>command.o : command.c defs.h command.h<br/>            $CC -c command.c<br/></code><ol type="a" id="845c7f24-d7b8-495a-8796-c3aae9033698" class="numbered-list" start="1"><li>Wenn die command.o gebaut wird, wird die command.c Quelldatei gelinked mit den Header Dateien. <br/>Wenn entweder die Quelldatei oder eine der Header Dateien geändert wird, wird die objective Datei neu übersetzt.<br/></li></ol></li></ol><ol type="1" id="a0140c04-13ac-479e-ac9d-29a28bb9595d" class="numbered-list" start="7"><li>Sie erhalten die folgende Meldung, als Sie das Programm main ausführen wollen:<br/><br/><code>./main: error while loading shared libraries: libmy.so:<br/>cannot open shared object file: No such file or <br/>directory<br/></code><br/>Was ist da los und wie finden Sie die Ursache der Fehlermeldung?<br/><ol type="a" id="a91620fe-6e2a-48ac-ad7a-5434ea728f4b" class="numbered-list" start="1"><li>Diese Fehlermeldung trifft auf wenn, der Pfad der Bibliotheken nicht bei der PATH_LIB…Umgebungsvariable vermerkt sind. Das Problem ist, dass das Programm nicht die Bibliotheken</li></ol></li></ol><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Lösungen</summary><div class="indented"><ol type="1" id="9f23bc46-4d2e-4bdf-8e84-9b40172a6812" class="numbered-list" start="1"><li><code>file &lt;Datei&gt;</code></li></ol><ol type="1" id="e453baa7-3260-420e-864b-21d0e418fb5c" class="numbered-list" start="2"><li>SoC: System on Chip</li></ol><ol type="1" id="d3cb10c5-7f16-4db4-a5f2-0c64da8b58b7" class="numbered-list" start="3"><li>Cross-Toolchain: Eine Cross-Toolchain wird auf dem Host genutzt, um Programmcode zu erstellen, der auf ARM-Systemen ausführbar ist.</li></ol><ol type="1" id="24e7e642-b23d-488c-97a2-99abaa9609eb" class="numbered-list" start="4"><li><code>CC</code>:  Die Umgebungsvariable enthält den Namen des Cross-Compilers, der den Code für ARM-Prozessoren erzeugt</li></ol><ol type="1" id="93d473c2-e5c6-4109-868d-5731d668f638" class="numbered-list" start="5"><li><code>.so</code>: In dieser .so (shared object)-Datei befinden sich Code und Referenzen zu Funktionen</li></ol><ol type="1" id="82d30aaa-e049-4d84-9990-656b50cd29b3" class="numbered-list" start="6"><li><code>command.o : command.c defs.h command.h<br/>            $CC -c command.c<br/><br/></code>Das Target ist command.o; Der Compiler wird dann aufgerufen, wenn der Zeitstempel der Quelldatei oder der Header Dateien jünger ist, als der der Objektdatei. Also wenn eine der 3 Dateien geändert wurden, wird der Compiler aufgerufen</li></ol><ol type="1" id="add17454-13c3-491d-a23c-c76e6497cf72" class="numbered-list" start="7"><li>Die Shell sucht in vordefinierten Verzeichnissen nach Bibliotheken. Wenn also, der Pfad der Bibliothek in der Umgebungsvariable <code>LD_LIBRARY_PATH</code> gespeichert ist, dann wird die Bibliothek nicht gefunden.</li></ol></div></details><h1 id="85ab30cf-64f3-48d9-b3a1-e0b1a51cc624" class="">Kapitel 4 - Das eigene Linux-System</h1><figure id="518398a4-b4dc-4aa6-b93a-2537bbbe4eca"><div class="source"><a href="Leon%20-%20Checkpointfragen%20a2136b95478d4324b65be4c47e6dff49/PAS_Checkpoint_Fragen_04.pdf">https://prod-files-secure.s3.us-west-2.amazonaws.com/cbded2ee-5b2a-4b10-a3ae-4e26a40eed77/e4148166-9592-4412-ae49-52a15df9ee64/PAS_Checkpoint_Fragen_04.pdf</a></div></figure><ol type="1" id="6aed14fc-7304-475a-9c07-95d36a001d15" class="numbered-list" start="1"><li>Benennen Sie vier Möglichkeiten, um mit dem Kernel zu kommunizieren. <ol type="a" id="48c6b888-0756-42a7-9577-be3be7a92bd7" class="numbered-list" start="1"><li>Über System calls</li></ol><ol type="a" id="8f2d1e5d-d2aa-4baf-9f60-39cc3c17a19c" class="numbered-list" start="2"><li>Über den Priveledged/Kernel-Mode</li></ol><ol type="a" id="c31fd1bf-d34b-41a7-bd3c-57964d1508f4" class="numbered-list" start="3"><li>Über </li></ol></li></ol><ol type="1" id="eef5ace8-175c-4ceb-ad15-515f402296b5" class="numbered-list" start="2"><li>Ihr Home-Verzeichnis enthält sehr viele Dateien, so dass es nicht sinnvoll ist, diese zu zählen. Wie können Sie die Anzahl der Dateien mit Hilfe der Shell bequem ermitteln?<br/><br/><code>cd</code><br/><br/><code>ls -l | wc -l</code></li></ol><ol type="1" id="0dd06d05-c1ac-4795-8b99-4fb9ebb96a2b" class="numbered-list" start="3"><li>Ist die Funktion printf() ein System-Call?<ol type="a" id="77bb4f2f-62be-4721-91db-1016ad92548a" class="numbered-list" start="1"><li>Die Funktion ist kein System-Call, aber sie nutzt einen</li></ol></li></ol><ol type="1" id="8bcdc93e-944f-49b0-b86b-0b0c4c5ccc58" class="numbered-list" start="4"><li>Was ist das Besondere an der Datei kernel7.img?<ol type="a" id="2d0e80c5-4f62-44b5-a628-7a9d95ee631c" class="numbered-list" start="1"><li>Die Datei ist komprimiert und wird im Third-Stage-Bootload entpackt und gestartet</li></ol></li></ol><ol type="1" id="7a28c5b6-ec10-4ac5-8724-402f5daae952" class="numbered-list" start="5"><li>Der Kernel wird mit Hilfe von make gebaut. Welche Umgebungsvariablen müssen existieren, damit der Bau des Kernels wie erwartet verläuft?<ol type="a" id="5aea3e9a-ce28-4baf-93fb-8591ef672b69" class="numbered-list" start="1"><li>KERNEL = kernel7</li></ol></li></ol><ol type="1" id="3bbe97ab-6b53-4a86-905e-546ba87f37f9" class="numbered-list" start="6"><li>Auf der Boot-Partition Ihre Raspberry Pi gibt es die Datei bcm2709-rpi-2-b.dtb. Was ist der Inhalt der Datei?<ol type="a" id="ad448f2c-0b95-490d-a52c-14ad196464f2" class="numbered-list" start="1"><li>In dieser Datei ist ein device tree, also eine Geräte-Baum gespeichert, als Binärcode. </li></ol></li></ol><ol type="1" id="a760a13f-fc38-45e2-868f-996b4f72c68b" class="numbered-list" start="7"><li>Man kann aus dem Quellcode des Kernels Standardkonfigurationen erzeugen. Wie finden Sie die möglichen Standardkonfigurationen für den Raspberry Pi?<ol type="a" id="dbffa803-e018-4639-ac66-f9ba0d9203d3" class="numbered-list" start="1"><li>Man kann in der .config Konfigurationsdatei einige Konfigurationen einstellen. </li></ol><ol type="a" id="80be58b1-723a-4af3-8082-7a440a6a0ede" class="numbered-list" start="2"><li>Hier sind die Standardkonfigurationen gespeichert</li></ol></li></ol><ol type="1" id="f74f733d-5720-4793-8797-a0a472121142" class="numbered-list" start="8"><li>Wo findet man die Konfiguration des Kernels?<ol type="a" id="c9525fab-778e-4aa6-8f4f-e633739c00f8" class="numbered-list" start="1"><li>Die Konfiguration findet man in der .config Datei</li></ol></li></ol><ol type="1" id="26acec17-a115-4a4b-a62b-a39022dffe9f" class="numbered-list" start="9"><li>Wie finden Sie in einem laufenden Linux System heraus, wann der Kernel gebaut worden ist?<ol type="a" id="df6650aa-40f0-4a3c-8263-a93746172e95" class="numbered-list" start="1"><li>Im syslog</li></ol></li></ol><p id="8e57bf87-d36c-4854-96d2-0001b98294f2" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Lösungen</summary><div class="indented"><ol type="1" id="fd83f48f-4f73-4194-b7dc-e872b67bac9a" class="numbered-list" start="1"><li>4 Kernel-Kommunikationsmöglichkeiten:<ol type="a" id="c757fe70-b7d5-4a00-a262-2832c9d17a35" class="numbered-list" start="1"><li>Geräteknoten (<code>/dev</code>)</li></ol><ol type="a" id="c1573c39-2707-4266-b18a-89f93af33875" class="numbered-list" start="2"><li>Virtuelle Dateisysteme (<code>/sys</code> oder <code>/proc</code>)</li></ol><ol type="a" id="f57b4838-ba3f-4c0f-b78a-2cb1ac344fad" class="numbered-list" start="3"><li>System Calls (syscall)</li></ol><ol type="a" id="6d286288-dfb7-4c08-a00e-ee666bb2c83d" class="numbered-list" start="4"><li>Signale</li></ol></li></ol><ol type="1" id="0b05c0a4-6476-470e-81cb-435b4def08d7" class="numbered-list" start="2"><li><code>cd</code><br/><br/><code>ls | wc -l</code></li></ol><ol type="1" id="1a362f46-28b6-4129-a467-7f8878dbf914" class="numbered-list" start="3"><li>Ist kein System Call, aber nutzt einen</li></ol><ol type="1" id="8e269472-263e-44c5-92a1-7e2eeb3a53de" class="numbered-list" start="4"><li>Die Datei ist selber gebaut. und der Kernel ist selber konfiguriert</li></ol><ol type="1" id="c3538909-a62d-43ec-8327-daaedc092289" class="numbered-list" start="5"><li>KERNEL=kernel7</li></ol><ol type="1" id="618c60ef-4698-426d-aa92-f0efbf45cb65" class="numbered-list" start="6"><li>In dieser Datei findet sich die Konfigurationsdatei als device tree. Der Inhalt ist binär</li></ol><ol type="1" id="3c16175a-1292-4060-9bee-3286790fcd10" class="numbered-list" start="7"><li>Standardkonfiguration: Die möglichen Standardkonfiguration findet man auf der Internetseite von RaspberryPi</li></ol><ol type="1" id="3dd2da22-025c-4f52-850d-3049bc85b5e4" class="numbered-list" start="8"><li>Die Konfiguration findet man in der <code>.config</code>-Datei</li></ol><ol type="1" id="6cd1a832-4f47-4921-894e-f676a4322668" class="numbered-list" start="9"><li>Wann der Kernel gebaut wurde kann man rausfinden mit dem Befehl: <code>uname -a</code></li></ol></div></details><h1 id="ba24b824-e72e-4e68-be6b-b0f1981d032d" class="">Kapitel 5 - BusyBox</h1><figure id="51502dbe-e72b-45fb-84dd-08e0ffae11c0"><div class="source"><a href="Leon%20-%20Checkpointfragen%20a2136b95478d4324b65be4c47e6dff49/PAS_Checkpoint_Fragen_05.pdf">https://prod-files-secure.s3.us-west-2.amazonaws.com/cbded2ee-5b2a-4b10-a3ae-4e26a40eed77/e74c9bf6-d9b8-4d93-bbe7-e5e561b86ecd/PAS_Checkpoint_Fragen_05.pdf</a></div></figure><ol type="1" id="13e740a7-a321-46eb-b6e3-16f36742718e" class="numbered-list" start="1"><li>Wofür ist das Verzeichnis /usr vorgesehen und was bedeutet sein Name?<ol type="a" id="1fbf79f7-e08e-4a35-b2ff-0dcc5214c186" class="numbered-list" start="1"><li>Das /usr Verzeichnis ist vorgesehen für </li></ol></li></ol><ol type="1" id="388de550-d350-411e-9b6d-78677fbd5159" class="numbered-list" start="2"><li>Was ist der Unterschied zwischen den Verzeichnissen /mount und /media?<ol type="a" id="44c09753-8b43-452a-8039-322d93968711" class="numbered-list" start="1"><li>In dem Verzeichnis /media werden die Dateisysteme automatisch durch auto-mount eingehängt. In dem Verzeichnis /mount sind die ganzen manuell eingehängten Dateisysteme aufgelistet</li></ol></li></ol><ol type="1" id="223fba9a-dd39-40d1-b06d-294c47980961" class="numbered-list" start="3"><li>Mit welchem Befehl können Sie den inode einer Datei ermitteln?<ol type="a" id="ccaae5c4-78f2-423b-8ffe-cda29be5804c" class="numbered-list" start="1"><li><code>ls -i &lt;Datei&gt;</code></li></ol></li></ol><ol type="1" id="704b8ed6-8678-4c94-9de1-8846d54fb743" class="numbered-list" start="4"><li>Mit welchem Befehl erzeugen Sie einen Link namens line.txt auf die Datei read.me?<ol type="a" id="f1d1f469-6ffa-4ba4-b280-ffda78fed6db" class="numbered-list" start="1"><li><code>ln read.me line.txt</code></li></ol></li></ol><ol type="1" id="659e4da5-2603-4a4e-9346-1d9ddb40b27a" class="numbered-list" start="5"><li>Was ist der Unterschied zwischen einem Hard-Link und einem Soft-Link?<ol type="a" id="27531485-da05-4e4c-971e-124fd361fc98" class="numbered-list" start="1"><li>Bei einem Hard-Link handelt es sich um eine Referenz auf den Inhalt der Verlinkten Datei. Hierbei hat der Link die selbe inode wie das Original</li></ol><ol type="a" id="105d6c07-d301-4e04-95f7-bf70d6fb2e3b" class="numbered-list" start="2"><li>Bei einem Soft-Link handelt es sich um eine Referenz auf den Namen der verlinkten Datei. Hierbei hat der Link seine eigene inode. Das bewirkt, dass im Gegensatz zum Hard-Link, der Link gelöscht wird, sobald das Original gelöscht wird.</li></ol></li></ol><ol type="1" id="fcb85493-69f4-434e-bb48-0a7a3f225c15" class="numbered-list" start="6"><li>Was enthält das Array argv in der Parameterliste der main()-Funktion eines C-Programms? Was enthält insbesondere argv[0]?<ol type="a" id="dd3fffc5-a0f8-4dbc-8e83-abb4e095e367" class="numbered-list" start="1"><li>Das Array enthält die Parameter, die übergeben wurden mit dem Programmaufruf. Inbesondere in argv[0] befindet sich der Befehl, um den es sich handelt wie z.B. <code>ls</code></li></ol></li></ol><ol type="1" id="ef2f0707-0b5a-4f81-af05-0c306d18e215" class="numbered-list" start="7"><li>Benennen Sie eine Besonderheit der Busybox-Software.<ol type="a" id="17d2264c-0668-4816-9992-52d99a14f70a" class="numbered-list" start="1"><li>Eine Besonderheit der Busybox-Software ist die enorme Speichereinsparung</li></ol></li></ol><p id="4fc08458-3253-4d02-ba78-f0ff0614f97a" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Lösungen</summary><div class="indented"><ol type="1" id="2c03cb21-b2f5-4762-b08f-0325d53ab050" class="numbered-list" start="1"><li>/usr: Unix System Ressources: Software, die nicht zur Unix-Grundausstattung gehört</li></ol><ol type="1" id="6b941b51-894d-462f-9856-31d5525303d2" class="numbered-list" start="2"><li>/media: Mountpunkt für Datenträger. Oft werden beim automatischen Mounten hier her gemounted<br/>/mount oder /mnt: Mountpunkt für Dateisysteme<br/></li></ol><ol type="1" id="7ad3e38a-7192-4420-850e-bfb32b97e035" class="numbered-list" start="3"><li>inode: <code>ls -i &lt;Datei&gt;</code></li></ol><ol type="1" id="ad463277-0b20-4ae8-9274-841c5ee3fd3b" class="numbered-list" start="4"><li><code>ln read.me line.txt</code></li></ol><ol type="1" id="764c0c4c-33b2-45e7-b531-2db2606e23d7" class="numbered-list" start="5"><li>Hard-Link: Referenz auf den gleichen inode; Nur innerhalb des gleichen Dateisystems<br/>Soft-Link: Referenz auf den inode des Originals; Dateisystem-übergreifend<br/></li></ol><ol type="1" id="69073666-081b-4071-ad51-83d60bc62a21" class="numbered-list" start="6"><li><code>argv</code>: enthält Programmnamen und Programm-Parameter<br/><br/><code>argv[0]</code>: enthält insbesondere den ersten Parameter, woran das Programm merkt, wie es aufgerufen wurde</li></ol><ol type="1" id="eff5a2c1-0d10-4638-833b-b2828376ded3" class="numbered-list" start="7"><li>Eine Busybox-Besonderheit: Ressourcenschonende Linux-Installation </li></ol></div></details><h1 id="3f29737b-16f7-47fb-9ece-8a37f68decb9" class="">Kapitel 6 - Integrierte Entwicklungsumgebung<br/>Kapitel 7 - Plattformunabhängige SW-Entwicklung<br/>Kapitel 8 - Prozesse und Signale<br/>Kapitel 9 - Multithreading<br/></h1><figure id="961f4299-9c89-45ec-8bbc-58ab53653587"><div class="source"><a href="Leon%20-%20Checkpointfragen%20a2136b95478d4324b65be4c47e6dff49/PAS_Checkpoint_Fragen_06bis09.pdf">https://prod-files-secure.s3.us-west-2.amazonaws.com/cbded2ee-5b2a-4b10-a3ae-4e26a40eed77/231aa6c6-a005-475d-9fc6-fe6689882ab7/PAS_Checkpoint_Fragen_06bis09.pdf</a></div></figure><ol type="1" id="26eee6a6-2b94-49b3-b416-5c738c02efa9" class="numbered-list" start="1"><li>Definieren Sie die Begriffe „Architektur“ und „Plattform“, so wie sie in diesem Modul verwendet werden.<ol type="a" id="e4ff1fa4-b780-4427-8f51-02c87da38ecd" class="numbered-list" start="1"><li>Unter Architektur versteht man den Aufbau und die Strukturierung von CPU/SW/HW/</li></ol><ol type="a" id="4ab3919b-bca4-4e15-9b16-67f069a1fc18" class="numbered-list" start="2"><li>Plattform ist das Gerät auf dem gearbeitet wird</li></ol></li></ol><ol type="1" id="e3d63b94-c9a7-4363-b011-306d09408f00" class="numbered-list" start="2"><li>Grenzen Sie Managed-Make- und Makefile-Projekte voneinander ab.<ol type="a" id="3e0b4801-c5aa-4c39-89c0-5bf735ed3fb4" class="numbered-list" start="1"><li>Bei einem Managed-Make-Projekt kümmert sich die IDE um die den Aufbau und die Strukturierung vom Makefile. Diese Projekte werden genutzt für “Standard-Software”, bei der es maximal eine main-Funktion, also eine ausführbare Datei gibt.</li></ol><ol type="a" id="788c5b64-bfb1-48a2-91d7-ca6c7294f60c" class="numbered-list" start="2"><li>Bei einem Makefile-Projekt ist man selber für die Verwaltung des Makefiles verantwortlich. Das empfiehlt sich für komplexere SW-Projekte mit mehreren main-Funktionen und ausführbaren Dateien. Das ist zu empfehlen für importierte Projekte, da es bei denen schon Makefiles gibt. </li></ol></li></ol><ol type="1" id="634db0de-3228-418d-928d-f496c6a94a9b" class="numbered-list" start="3"><li>Welche Konzepte werden in Eclipse genutzt, um eine plattformunabhängige Software-Entwicklung effizient zu gewährleisten?<ol type="a" id="67020aff-7e7d-4953-9e00-3c24d76891bb" class="numbered-list" start="1"><li>Run-Konfiguration</li></ol><ol type="a" id="c058593f-cbd3-4b3e-83c3-270274e8764d" class="numbered-list" start="2"><li>Debug-Konfiguration</li></ol><ol type="a" id="645f6267-befe-4ee5-a6a5-e9bfffa58a4f" class="numbered-list" start="3"><li>Built-Konfiguration</li></ol><ol type="a" id="a3cfe382-8d74-44c2-aa0c-11c689fc4053" class="numbered-list" start="4"><li>Target-Konfiguration</li></ol><ol type="a" id="06de3e35-d734-40d1-8a56-442d4ce8f3f2" class="numbered-list" start="5"><li>(Host-Konfiguration) Plattform</li></ol></li></ol><ol type="1" id="aac14bd8-f344-4a67-9833-0f7a0d41999b" class="numbered-list" start="4"><li>Skizzieren Sie die beteiligten Instanzen bei einer Remote-Debugging-Session in einem Blockdiagramm.<ol type="a" id="c8a6880c-b050-4640-81dc-a4b5eea9ba1f" class="numbered-list" start="1"><li></li></ol></li></ol><ol type="1" id="e9e60d03-d379-4f31-a3d2-66f965fc0958" class="numbered-list" start="5"><li>Eine Datei hat die Permission-Flags 754. Wer hat welche Rechte für diese Datei?<ol type="a" id="9cc2500d-5382-42b9-aab5-6ababa145b8f" class="numbered-list" start="1"><li>User: read, write, execute </li></ol><ol type="a" id="93fb3325-7777-4737-ba37-313b2b9d5c8e" class="numbered-list" start="2"><li>Group: read, execute</li></ol><ol type="a" id="4097d035-8f33-4e2a-a779-0968a7c5edee" class="numbered-list" start="3"><li>All: read</li></ol></li></ol><ol type="1" id="2a0fca2d-6b43-4335-8dd0-8fed135c0066" class="numbered-list" start="6"><li>Welche Klassen von Signalen kennen Sie?<ol type="a" id="552c9e5b-ebe0-4b3d-be4e-4e285a4f424f" class="numbered-list" start="1"><li></li></ol></li></ol><ol type="1" id="28fa2bd7-c581-4af9-aac8-c0eac7587c7f" class="numbered-list" start="7"><li>Wie sieht das Grundgerüst eines allgemeinen Signal-Handlers aus? Skizzieren Sie in Pseudo-Code.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2e2ef5d8-5f96-49d4-b954-40142de3a1a0" class="code"><code class="language-Java">sig_handler(</code></pre></li></ol><ol type="1" id="b9f36dbf-2fc8-41d2-88fb-2ffbe287e39a" class="numbered-list" start="8"><li>Was haben ein Vater- und sein Sohn-Prozess miteinander gemeinsam? Was hat ein Main-Thread und die darin erzeugten weiteren Threads miteinander gemeinsam?<ol type="a" id="26576f43-aa63-4094-a0c9-8c388befda59" class="numbered-list" start="1"><li>Der Sohn-Prozess ist eine Spiegelung des Vater-Prozesses. Sie haben also den selben Aufbau. </li></ol><ol type="a" id="c707ea96-cf4c-4220-af2c-53ff32d3609d" class="numbered-list" start="2"><li>Der Main-Thread und die weiter erzeugten Threads nutzten den selben Datenspeicher. Das heißt, sie können auf die selben Werte zugreifen. Gemeinsam haben sie zudem noch den Prozess. Es finden beide Threads im selben Prozess statt</li></ol></li></ol><ol type="1" id="f19fa673-15c3-4556-a645-7651cf32d9fb" class="numbered-list" start="9"><li>Definieren Sie den Begriff „kritischer Bereich“.<ol type="a" id="2d20cd29-62c8-4365-b461-4b202a4af5fb" class="numbered-list" start="1"><li>Ein kritischer Bereich ist, wenn mehrere Prozesse versuchen gleichzeitig die CPU zu belegen. </li></ol></li></ol><ol type="1" id="d90c53ed-8040-49fd-9ea1-25e5e63134c4" class="numbered-list" start="10"><li>Was ist der Unterschied zwischen „Deadlock“ und „Livelock“?</li></ol><p id="0ada863f-f1f6-4d0c-81fb-264331c33a54" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Lösungen</summary><div class="indented"><ol type="1" id="e0f63acb-1a91-404e-9b2c-dac501389a31" class="numbered-list" start="1"><li>Definition:<ol type="a" id="dec617ff-f52e-41a4-b4cc-b6d5d1c1954a" class="numbered-list" start="1"><li>Architektur: Software-; Rechner-; System-Architektur. In unserem Fall ist meisten die CPU-Architektur gemeint, also der Aufbau und die Struktur des zentralen Prozessors</li></ol><ol type="a" id="c4bf3710-544b-4e5a-a5aa-8a60a30ef548" class="numbered-list" start="2"><li>Plattform: Software-; Host-; Target-Plattform. CPU-Architektur + HW-Peripherie + Basis-SW</li></ol></li></ol><ol type="1" id="e8ebd928-20e0-4d8d-9b9d-35a343f215ff" class="numbered-list" start="2"><li><strong>Managed-Make</strong>: Erzeugung, Verwaltung und Anpassung des Makefiles übernimmt Eclipse. Für einfache Programme sehr effektiv<br/><br/><strong>Makefile-Projekte</strong>: Makefile wird von Benutzter mitgebracht und verwaltet. IDE benutzt Makefile zum Bauen, verändert es aber nicht. Sinnvoll bei bereits existierenden und bei komplexeren Programmen</li></ol><ol type="1" id="267369b1-4953-4025-b6a5-7379e94c4910" class="numbered-list" start="3"><li>IDE-Konzepte:<ol type="a" id="34a2859e-66ab-43cc-929b-ddf7b513edb0" class="numbered-list" start="1"><li>Plattform-Konfiguration</li></ol><ol type="a" id="61eb7b36-76fb-4dfd-a11a-511fe9b7980a" class="numbered-list" start="2"><li>Build-Konfiguration</li></ol><ol type="a" id="1fccb9c5-5320-4fe9-8625-47f0bcac8257" class="numbered-list" start="3"><li>Run-Konfiguration</li></ol><ol type="a" id="6449906b-c766-4689-8f32-651124cb28fc" class="numbered-list" start="4"><li>Debug-Konfiguration</li></ol><ol type="a" id="9d3420f6-db3b-4ffc-a4c3-d1a03e2eb54d" class="numbered-list" start="5"><li>Target-Konfiguration</li></ol></li></ol><ol type="1" id="94956a50-1ce4-4f6f-b449-096992d0a931" class="numbered-list" start="4"><li>Cross-Debugging: <hr id="da82b9c4-54e8-4ef3-97d4-5c0a9a90c030"/><div id="cf9db698-3383-434a-97b4-843195ae2dd8" class="column-list"><div id="60e0d8c3-8967-4c5b-93ca-ea38af8e57e0" style="width:50%" class="column"><blockquote id="7a9812b2-57c5-4119-a264-c7b96b21c019" class="">   <strong>Target (ARM)             </strong>|</blockquote><blockquote id="038468ad-d986-4b68-a352-774677869a54" class="">Executable                     |</blockquote><blockquote id="996fa567-3eb1-413d-8a76-7653fcccf72e" class="">     ↕                             |</blockquote><blockquote id="dd22bfb9-8e7f-4ea8-9d35-5413307c846e" class="">gdb-server                     |          ↔ </blockquote></div><div id="32a40ee2-237e-4024-91b1-f01a99d6878e" style="width:50%" class="column"><blockquote id="4e1a2cbd-b58b-4b21-909d-3e44fc4f6fbb" class=""><strong>Host(x86)         |</strong></blockquote><blockquote id="6098d168-0476-4dfb-b2ae-819054bbc432" class="">Eclipse              |</blockquote><blockquote id="b87295f3-89cf-4b54-840f-764f6e430771" class="">   ↕                  |</blockquote><blockquote id="5fb05347-ec65-46c8-b9ae-d66ff1c6d10a" class="">gdb(ARM)         |</blockquote></div></div><figure id="cd7a66fb-e897-4df5-9863-ad2c471e57a1" class="image"><a href="Leon%20-%20Checkpointfragen%20a2136b95478d4324b65be4c47e6dff49/Untitled.png"><img style="width:1067px" src="Leon%20-%20Checkpointfragen%20a2136b95478d4324b65be4c47e6dff49/Untitled.png"/></a></figure></li></ol><ol type="1" id="3b2b5848-2bec-4f66-b596-12e9b879ae65" class="numbered-list" start="5"><li>754:<ol type="a" id="e585eb07-06cc-45e9-a5c3-351e977ebbce" class="numbered-list" start="1"><li>User: 4 + 2 + 1 read, write, execute </li></ol><ol type="a" id="614c8b0e-9943-4561-929b-9f42602b9064" class="numbered-list" start="2"><li>Group: 4 + 1 read, execute</li></ol><ol type="a" id="7745bc8d-de60-4aaa-b597-943914144cea" class="numbered-list" start="3"><li>All: 4 read</li></ol></li></ol><ol type="1" id="bd7339ae-b5a7-444d-8b32-22db68c30a9a" class="numbered-list" start="6"><li>Signale:<ol type="a" id="b8d736a1-2615-4a0f-bc40-987033119aa2" class="numbered-list" start="1"><li>Systemsignale</li></ol><ol type="a" id="62ae7cb0-9993-4897-8291-fb7915eb7a77" class="numbered-list" start="2"><li>Gerätesignale</li></ol><ol type="a" id="4b6dfa65-c0c8-4b2f-8f4a-6d4e7d754aac" class="numbered-list" start="3"><li>Benutzerdefinierte Signale</li></ol></li></ol><ol type="1" id="5612076e-866e-425c-8274-4d915e38752c" class="numbered-list" start="7"><li>Grundgerüst Signalhandler:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="0c048db6-1cdf-4960-8182-7cc183f1428b" class="code"><code class="language-Java">void sig_handler(int signum){
+	if(signum = SIGURS1)
+		//do nothing
+	else if(signum = SIGURS2)
+		//do nothing
+}</code></pre></li></ol><ol type="1" id="bf8aa33e-9f64-4dcf-af32-773b96e8f3e0" class="numbered-list" start="8"><li>Gemeinsamkeiten:<ol type="a" id="45a54b33-7aca-407b-9cdc-ddc25b3508f8" class="numbered-list" start="1"><li>Vater/Sohn Prozess: beide Prozesse sind bis auf die PID und der Speicherbereich gleich</li></ol><ol type="a" id="3f2a2844-fa35-41ea-955b-551a57612ec0" class="numbered-list" start="2"><li>Main/erzeugter Thread: Threads teilen sich den Adressraum und somit die meisten Ressourcen</li></ol></li></ol><ol type="1" id="a46bc29e-3ac3-4a23-af72-6af4dbb1ae7d" class="numbered-list" start="9"><li>“kritischer Bereich”: inkonsistenzen durch ungünstiges Scheduling. </li></ol><ol type="1" id="aee79bce-98f2-448d-ac88-3e582f7d989b" class="numbered-list" start="10"><li>“Deadlock/Livelock”: dauerhafte Blockierung von Threads, die gemeinsame Ressourcen nutzen oder miteinander kommunizieren</li></ol></div></details><h1 id="c926148c-2eb0-4293-8388-2a3799d8a03c" class="">Kapitel 10 - Audio</h1><figure id="53074494-0920-4e78-a5fb-9908805b30a3"><div class="source"><a href="Leon%20-%20Checkpointfragen%20a2136b95478d4324b65be4c47e6dff49/PAS_Checkpoint_Fragen_10.pdf">https://prod-files-secure.s3.us-west-2.amazonaws.com/cbded2ee-5b2a-4b10-a3ae-4e26a40eed77/bfff9db4-aa26-43e7-8ee3-18ab2dba343c/PAS_Checkpoint_Fragen_10.pdf</a></div></figure><p id="f755751a-c6ef-4155-867f-7f0b2c7d5a0a" class="">Frage 5 für Paul</p><ol type="1" id="cb545ab3-8c51-4e35-b434-4d83db591ab2" class="numbered-list" start="1"><li>Warum ist Multimedia eine repräsentative Anwendungsdomäne für autonome Systeme?<ol type="a" id="e374bf0d-a317-4c3a-bf9f-c2caedee6cfa" class="numbered-list" start="1"><li>Weil Multimedia heutzutage überall genutzt wird. Sehr häufig für Embedded Systems</li></ol></li></ol><ol type="1" id="03f44879-7293-4b7e-a1f2-8060f106181d" class="numbered-list" start="2"><li>Welche Anforderungen implementiert ein modernes Multimedia-Gerät?<ol type="a" id="03cfddcd-6e0c-42eb-82d2-29c33fcaa3ae" class="numbered-list" start="1"><li>MediaRendering<br/>MediaAccess<br/>MediaManagement<br/>MediaProcessing<br/></li></ol></li></ol><ol type="1" id="6affaf7c-6b0e-43d3-8f34-644549757792" class="numbered-list" start="3"><li>Was bedeuten die Begriffe „Bitbreite“ und „Abtastrate“ bei der Umwandlung von der analogen in die digitale Repräsentation von Audio-Signalen und welche Auswirkungen haben sie?<ol type="a" id="59d89148-0784-4c70-9188-40bbeb857b2b" class="numbered-list" start="1"><li>Bitbreite: Die Bitbreite ist die Auflösung der einzelnen Abtastwerte</li></ol><ol type="a" id="b77e0f95-4857-42e4-8b1e-30cf9ca73563" class="numbered-list" start="2"><li>Abtastrate: Die Abtastrate beschreibt, wie oft pro Sekunde abgetastet wird.</li></ol><ol type="a" id="72b9b954-a451-4dd5-bb36-7f2d4b033d57" class="numbered-list" start="3"><li>Auswirkungen</li></ol></li></ol><ol type="1" id="1eaedf80-6e20-4593-98cc-f2f061cd2807" class="numbered-list" start="4"><li>Was ist das Problem beim Cross-Compiling, wenn das Programm Nicht-Standardbibliotheken nutzt, und wie kann man es – sinnvoll – in Eclipse beheben?<ol type="a" id="fe7e5d9c-e827-4b70-9d0a-fdf5e70e0ec6" class="numbered-list" start="1"><li>Das Problem ist, das Eclipse nur die x86 Bibliotheken zur Verfügung stehen. Eine Lösung ist, das root-Verzeichnis des Targets auf dem Host einzuhängen und Eclipse bekannt machen. So sucht Eclipse erst auf dem Target nach den ARM-libs</li></ol></li></ol><ol type="1" id="6613995e-9f93-42d7-95d1-e0ba423c07b5" class="numbered-list" start="5"><li>Was ist ein Multimedia-Filtergraph? Was ist ein Multimedia-Filter? Was ist ein Multimedia-Framework?<ol type="a" id="f57131bc-96e1-44a8-ac68-236cabebf292" class="numbered-list" start="1"><li>Ein Multimedia-Filtergraph ist scheiße</li></ol></li></ol><ol type="1" id="94fca817-90ac-4b82-ac6e-3a80f9e619b8" class="numbered-list" start="6"><li>Welche Klassen von Multimedia-Filtern kennen Sie, und welche Aufgaben haben sie?<ol type="a" id="36b4d6fd-e13b-4ae9-a817-00babf000666" class="numbered-list" start="1"><li>Klassen: </li></ol></li></ol><ol type="1" id="df84daac-5cd9-4ffd-bbd4-01f39c86028d" class="numbered-list" start="7"><li>Skizzieren Sie einen Filtergraphen für einen einfachen Rip&amp;Play-UseCase in der GStreamer-Notation.</li></ol><p id="60b8604c-0110-440f-a1d6-1541064005a0" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Lösungen</summary><div class="indented"><ol type="1" id="f642167a-cb7c-4a23-ad49-305aadc13c62" class="numbered-list" start="1"><li>Multimedia<ul id="1f2b612c-a550-4801-a2a5-e0e4b21d45e3" class="bulleted-list"><li style="list-style-type:disc">Überall vorhanden, breites Einsatzspektrum.</li></ul><ul id="54e8ee76-b3a8-4c03-97cf-b314cd9a70ff" class="bulleted-list"><li style="list-style-type:disc">Auf vielen Plattformen verfügbar</li></ul><ul id="bfef99e0-51f1-43e6-add5-96136761e1f1" class="bulleted-list"><li style="list-style-type:disc">Leichter Einstieg</li></ul></li></ol><ol type="1" id="61727733-36ac-4b7c-8815-d28c54f0b112" class="numbered-list" start="2"><li>Media Rendering<br/>Media Access<br/>Media Management<br/>Media Processing<br/></li></ol><ol type="1" id="15b93bcc-2232-4fff-b5ff-dc48a9d93d47" class="numbered-list" start="3"><li>Bitbreite: Die Bitbreite ist die Auflösung der einzelnen Abtastwerte<br/>Abtastrate (Sample Rate) ist die Anzahl der Abtastvorgänge pro Sekunde<br/>Auswirkungen: Auf Qualität und Größe der Datei<br/></li></ol><ol type="1" id="ce73d48b-ac8e-4c48-8254-86440d95c507" class="numbered-list" start="4"><li>Libs sind zwar da, jedoch nicht im ARM-Format. Cross Compiler (und Cross Linker) kommen nicht weiter. Lösung:<ul id="39438df9-5590-4869-baf8-8b609fbdd699" class="bulleted-list"><li style="list-style-type:disc">Gesamtes Root-Filesystem des Targets auf Host einbinden</li></ul><ul id="36acfd63-abb8-4fb9-aaac-9b8b85936ecb" class="bulleted-list"><li style="list-style-type:disc">#include Pfade des Targets in Eclipse einbinden</li></ul><ul id="50d748a0-66b1-44ef-9b59-176d652201b4" class="bulleted-list"><li style="list-style-type:disc">Target Libs beim Linken mit einbinden</li></ul></li></ol><ol type="1" id="8001a4f4-57ae-4bd6-bea4-4494f8c6ef6d" class="numbered-list" start="5"><li><strong>Multimedia-Filtergraph</strong>: Darstellung des Datenflusses zwischen verschiedenen Multimedia-Komponenten<br/><br/><strong>Multimedia-Filter</strong>: Komponente, die spezifische Aufgaben wie das Dekodieren oder Filtern von Medieninhalten übernimmt<br/><br/><strong>Multimedia-Framework</strong>: Plattform, die Tools und Bibliotheken für die Entwicklung von Multimedia-Anwendungen bereitstellt.</li></ol><ol type="1" id="b2a3cad0-7920-423d-8577-91843b942f1a" class="numbered-list" start="6"><li>Filterklassen:<ol type="a" id="4154d51d-ac81-4968-b971-22567f6ab92c" class="numbered-list" start="1"><li><strong>Source- / Sink-Filter</strong><ol type="i" id="d4450674-d1ed-42a9-a288-df7ef0305053" class="numbered-list" start="1"><li>Rendern (Reader, Streamer, Writer)</li></ol></li></ol><ol type="a" id="a74e22a7-8848-4f30-b65f-44978e724c3f" class="numbered-list" start="2"><li><strong>Analyze and Control</strong><ol type="i" id="14611321-c481-4f61-8a48-42cbff82692f" class="numbered-list" start="1"><li>Parser</li></ol><ol type="i" id="bedbdbf6-d36b-4415-bfee-3222fd123373" class="numbered-list" start="2"><li>Demultiplexer</li></ol><ol type="i" id="a2e6e01d-025d-4c56-9c9d-976f19e63ef4" class="numbered-list" start="3"><li>Navigator</li></ol></li></ol><ol type="a" id="d86ea050-32ad-43c0-9393-a5f5479f6c39" class="numbered-list" start="3"><li><strong>Processing</strong><ol type="i" id="522975c8-081c-491a-920b-9a8df9fdbf80" class="numbered-list" start="1"><li>Decode</li></ol><ol type="i" id="26146d06-d17e-4eb1-8356-157a9f58d599" class="numbered-list" start="2"><li>Encode</li></ol><ol type="i" id="9b2f5932-1d93-4705-9e3a-20dcbcbaae76" class="numbered-list" start="3"><li>Mixen</li></ol><ol type="i" id="6132babd-5279-49a9-85f9-77d909da234b" class="numbered-list" start="4"><li>A/V Synchronisieren</li></ol><ol type="i" id="bf3ab688-8e08-4c00-9e11-2370568d6cc8" class="numbered-list" start="5"><li>Queue</li></ol><ol type="i" id="6dbd6d50-14d0-4bfc-b73c-91374c842e85" class="numbered-list" start="6"><li>Sample Rate Converter</li></ol></li></ol></li></ol><ol type="1" id="4398c554-76fd-4dfe-9be8-d523f6f6b45c" class="numbered-list" start="7"><li>Rip &amp; Play:<p id="325f64fe-a2ad-4571-9d79-0d02adea22c9" class="">                                           → Converter → Encoder → File Sink<br/>Source → Decoder → Tee <br/>                                           → Converter → Resampler → Audio Sink<br/><br/></p><figure id="53f86152-2356-445b-91d4-cd949da1a41c" class="image"><a href="Leon%20-%20Checkpointfragen%20a2136b95478d4324b65be4c47e6dff49/Untitled%201.png"><img style="width:938px" src="Leon%20-%20Checkpointfragen%20a2136b95478d4324b65be4c47e6dff49/Untitled%201.png"/></a></figure><h1 id="74132330-b1a9-4cd1-86be-b7e25cb39ef0" class="">Kapitel 11 - Grafik</h1></li></ol></div></details><figure id="dfcc9d8a-4998-4666-901a-073295ff1d84"><div class="source"><a href="Leon%20-%20Checkpointfragen%20a2136b95478d4324b65be4c47e6dff49/PAS_Checkpoint_Fragen_11.pdf">https://prod-files-secure.s3.us-west-2.amazonaws.com/cbded2ee-5b2a-4b10-a3ae-4e26a40eed77/3dc64098-4c35-4400-9a8c-e9c44af4a2cc/PAS_Checkpoint_Fragen_11.pdf</a></div></figure><ol type="1" id="797e355e-1d8c-4fe9-a08d-5291e7b843d1" class="numbered-list" start="1"><li>Was ist ein „Kanal“? Welche Kanäle kennen Sie?<ol type="a" id="0531e39e-875c-4fd6-80d2-e261f19eb28f" class="numbered-list" start="1"><li>Ein Kanal enthält Informationen über einen Typ eines Frames. Zu diesen Kanälen gehören die Farbkanäle (meistens RGB), Translucency-Kanal (Alpha)</li></ol></li></ol><ol type="1" id="6d26d986-ed2c-45d5-9829-4ea7b8645a15" class="numbered-list" start="2"><li>Was ist Framebuffer, und wie kann in Linux darauf zugreifen?<ol type="a" id="c70eb7a1-a10e-4a7f-b30f-d3957fa02558" class="numbered-list" start="1"><li>Ein Framebuffer speichert die Kanalwerte für jeden Pixel eines Frames. Man kann darauf zugreifen mit fbset</li></ol></li></ol><ol type="1" id="8dac628f-96dd-43aa-9892-fe5d28c9a1d1" class="numbered-list" start="3"><li>Wie wird ein Pixel im RGB565- und im RGB24-Farbmodell repräsentiert?<ol type="a" id="eb3e61db-6f07-4422-89b6-b04890ec2aef" class="numbered-list" start="1"><li>Ein Pixel im RGB565-Modell wird folgendermaßen dargestellt: RRRRRGGGGGGBBBBB<br/>So benötigt ein Pixel 2 Byte<br/></li></ol><ol type="a" id="278c89c5-7351-4d9e-9888-a93ddbddc19d" class="numbered-list" start="2"><li>Im RGB24-Modell: RRRRRRRR GGGGGGGG BBBBBBBB<br/>Hier werden pro Pixel 3 Byte benötigt<br/></li></ol></li></ol><ol type="1" id="1d62c112-e358-466b-87b7-ff7a427a3ac7" class="numbered-list" start="4"><li>Was ist Alphablending und wie wird es erreicht?<ol type="a" id="55b5ca3e-0e5c-4b20-87d4-536dfddaa2f1" class="numbered-list" start="1"><li>Alphablending ist die Lichtdurchlässigkeit eines Objekts. Das heißt, je Transparenter das Objekt im Vordergrund, desto mehr erkennt man das Objekt und seine Farbe im Hintergrund. Man kann es berechnen mit der Formel <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mo stretchy="false">(</mo><mi>α</mi><mi>A</mi><mo>∗</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>α</mi><mo stretchy="false">)</mo><mi>B</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">C = (\alpha A*(1-\alpha)B)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span> </li></ol></li></ol><ol type="1" id="95591878-3c43-4e2a-8b9e-3961a618fa27" class="numbered-list" start="5"><li>Warum ist ein Framebuffer ein „kritischer Bereich“? Welche Probleme können auftreten und wie werden sie gelöst?<ol type="a" id="bd25c9d4-c11d-4062-8ac2-4f8f18e77813" class="numbered-list" start="1"><li>Ein Framebuffer ist ein “kritischer Bereich”, denn die Berechnung von jedem einzelnen Frame muss sehr schnell gehen, was bei der Anzahl an Pixeln zu Problemen führen kann in der Komplexität. Gerade bei Animationen, wo der Hintergrund immer wieder zurückgesetzt werden muss, kann das sehr problematisch werden.<br/>Das Problem wird gelöst, in dem man einen zweiten Framebuffer benutzt. Somit hat man einen Vordergrund und einen Hintergrund Framebuffer. Der eine ist der ative Framebuffer, der andere ist der Shadow-Buffer.<br/>Der eine Buffer fügt ein Sprite in das Bild ein, während der andere den Hintergrund speichert. Dann wird beim nächsten Frame vom einen der Hintergrund wieder eingefügt.<br/></li></ol></li></ol><ol type="1" id="9df59766-2a84-49e1-93c4-9d5a7269c150" class="numbered-list" start="6"><li>Warum funktioniert der naive Ansatz für Animationen nicht? Wie funktioniert eine einfache Sprite-Animation?<ol type="a" id="7516817b-d486-4f9b-b4b0-8f71db8b96af" class="numbered-list" start="1"><li>Bei dem naiven Ansatz für Sprite-Animationen wird der Hintergrund nicht wieder auf den ursprünglichen Wert zurückgesetzt, sondern es kommen einfach immer nur neue Sprites dazu.</li></ol><ol type="a" id="63ea2550-5a08-4f06-948f-02f4839d48bd" class="numbered-list" start="2"><li>Restore()<br/>Save()<br/>Write()<br/></li></ol><ol type="a" id="a133cebf-42d3-4540-8fbf-8fd8559c808d" class="numbered-list" start="3"><li>Erst wird wiederhergestellt, dann wird der Frame gespeichert, dann wird der Sprite eingefügt<br/><br/></li></ol></li></ol></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
